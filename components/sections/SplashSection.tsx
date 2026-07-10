@@ -17,10 +17,11 @@ export default function SplashSection() {
         className="relative z-10 w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96"
       >
         <Image
-          src="/images/LOGOCAS.jpeg"
+          src="/images/LOGOCAS.png"
           alt="Logo Citra Anak Sholeh"
           fill
           priority
+          sizes="(max-width: 768px) 256px, (max-width: 1024px) 320px, 384px"
           className="object-contain drop-shadow-2xl"
         />
       </motion.div>
