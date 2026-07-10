@@ -7,24 +7,17 @@ import { motion, useInView } from "framer-motion";
 const TEAM_MEMBERS = [
   {
     id: 1,
-    name: "Ustadz H. Abdullah, Lc., M.A.",
+    name: "Ustadz H. Syifa Udin",
     role: "Ketua Yayasan",
-    image: null, // Kosongkan agar pakai placeholder
+    image: null,
     description: "Alumni Universitas Al-Azhar Kairo, memiliki pengalaman lebih dari 15 tahun di bidang pendidikan Islam.",
   },
   {
     id: 2,
-    name: "Siti Fatimah, S.Pd.I",
+    name: "Laily Nur Fadilah",
     role: "Kepala Program Pendidikan",
     image: null,
     description: "Praktisi pendidikan anak usia dini dan penggiat metode tahfidz balita.",
-  },
-  {
-    id: 3,
-    name: "Ahmad Zaki, S.E.",
-    role: "Direktur Operasional",
-    image: null,
-    description: "Berpengalaman dalam manajemen lembaga filantropi dan pengembangan program sosial.",
   },
 ];
 
@@ -53,7 +46,7 @@ export default function TeamSection() {
         </div>
 
         {/* Team Grid */}
-        <div ref={ref} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div ref={ref} className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {TEAM_MEMBERS.map((member, idx) => (
             <motion.div
               key={member.id}

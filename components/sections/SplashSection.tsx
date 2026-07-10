@@ -1,10 +1,17 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function SplashSection() {
+  // Memaksa browser untuk mulai dari atas saat di-refresh
+  useEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <section className="relative w-full h-screen flex items-center justify-center bg-white overflow-hidden">
       {/* Optional: subtle background pattern/gradient to make the white less flat */}

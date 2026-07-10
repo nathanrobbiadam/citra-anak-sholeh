@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, Leaf } from "lucide-react";
 import { motion, AnimatePresence, useScroll } from "framer-motion";
@@ -59,9 +60,14 @@ export default function Header() {
             className="flex items-center gap-2.5 group"
             aria-label={`${SITE_NAME} - Kembali ke beranda`}
           >
-            {/* [TODO: Ganti dengan next/image dan logo asli dari client] */}
-            <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-primary-700 text-white shadow-brand-sm group-hover:bg-primary-600 transition-colors duration-200">
-              <Leaf className="w-5 h-5" aria-hidden="true" />
+            <div className="relative w-10 h-10 md:w-12 md:h-12 flex-shrink-0">
+              <Image
+                src="/images/LOGOCAS.png"
+                alt="Logo Citra Anak Sholeh"
+                fill
+                sizes="(max-width: 768px) 40px, 48px"
+                className="object-contain"
+              />
             </div>
             <div className="flex flex-col leading-none">
               <span className="font-display font-bold text-primary-900 text-sm md:text-base tracking-wide">
