@@ -5,12 +5,21 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function SplashSection() {
-  // Memaksa browser untuk mulai dari atas saat di-refresh
+  // Memaksa browser untuk mulai dari atas saat di-refresh (mengakali perilaku mobile)
   useEffect(() => {
     if ("scrollRestoration" in window.history) {
       window.history.scrollRestoration = "manual";
     }
+    
+    // Eksekusi instan
     window.scrollTo(0, 0);
+
+    // Eksekusi tambahan dengan jeda untuk memastikan mobile browser tidak menarik scroll ke bawah lagi
+    const timer = setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, []);
   return (
     <section className="relative w-full h-screen flex items-center justify-center bg-white overflow-hidden">

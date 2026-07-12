@@ -6,16 +6,16 @@ export const SITE_TAGLINE = "Membangun Generasi Qur'ani yang Berakhlak Mulia";
 export const SITE_DESCRIPTION =
   "Yayasan Citra Anak Sholeh adalah lembaga pendidikan dan sosial berbasis nilai Islam yang berkomitmen membentuk generasi muda yang cerdas, berakhlak, dan mencintai Al-Qur'an.";
 export const SITE_URL = "https://citraanaksholeh.org"; // [TODO: Ganti dengan domain nyata]
-export const SITE_PHONE = "[TODO: Isi nomor telepon]";
-export const SITE_EMAIL = "[TODO: Isi email resmi]";
-export const SITE_ADDRESS = "[TODO: Isi alamat lengkap lembaga]";
+export const SITE_PHONE = "+62 813-7774-4174";
+export const SITE_EMAIL = "csukomanunggal@gmail.com";
+export const SITE_ADDRESS = "Jl. Sukomanunggal No.83, Tanjungsari, Kec. Sukomanunggal, Surabaya, Jawa Timur 60187";
 export const SITE_MAPS_EMBED_URL = ""; // [TODO: Isi URL embed Google Maps]
 
 export const SOCIAL_LINKS = {
-  instagram: "https://instagram.com/citraanaksholeh", // [TODO: Konfirmasi username]
-  facebook:  "https://facebook.com/citraanaksholeh",  // [TODO: Konfirmasi URL]
-  youtube:   "https://youtube.com/@citraanaksholeh",  // [TODO: Konfirmasi channel]
-  whatsapp:  "https://wa.me/62",                      // [TODO: Isi nomor WhatsApp]
+  instagram: "https://www.instagram.com/tpqanaksholeh?igsh=YWxwNjlpanc0NjNh",
+  tiktok:    "https://www.tiktok.com/@tpq.citra.anak.sh?is_from_webapp=1&sender_device=pc",
+  youtube:   "https://www.youtube.com/@cass6356",
+  whatsapp:  "https://wa.me/6281377744174",
 } as const;
 
 export const NAV_LINKS = [

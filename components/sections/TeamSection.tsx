@@ -1,23 +1,24 @@
 "use client";
 
 import React, { useRef } from "react";
+import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 
 // [TODO: Ganti dengan data pengurus asli dari client]
 const TEAM_MEMBERS = [
   {
     id: 1,
-    name: "Ustadz H. Syifa Udin",
+    name: "Ustadz HM. Syifa'uddin, S.Ag",
     role: "Ketua Yayasan",
-    image: null,
-    description: "Alumni Universitas Al-Azhar Kairo, memiliki pengalaman lebih dari 15 tahun di bidang pendidikan Islam.",
+    image: "/images/PAK.png",
+    description: "Ketua Yayasan Citra Anak Sholeh Surabaya.",
   },
   {
     id: 2,
-    name: "Laily Nur Fadilah",
-    role: "Kepala Program Pendidikan",
-    image: null,
-    description: "Praktisi pendidikan anak usia dini dan penggiat metode tahfidz balita.",
+    name: "Ustadzah Laily Nur Fadhilah, S.HI",
+    role: "Kepala Unit",
+    image: "/images/BU.png",
+    description: "Kepala Unit TK TPQ Diniyah Tarbawi dan Pesantren Tahfidz Anak Sholeh.",
   },
 ];
 
@@ -58,12 +59,14 @@ export default function TeamSection() {
               {/* Image Placeholder */}
               <div className="relative w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden bg-primary-100 border-4 border-white shadow-sm">
                 {member.image ? (
-                  // Jika ada gambar asli, gunakan img (bisa diganti next/image nantinya)
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
+                  <Image
                     src={member.image}
                     alt={`Foto ${member.name}`}
-                    className="object-cover w-full h-full"
+                    fill
+                    sizes="128px"
+                    className={`object-cover ${
+                      member.id === 2 ? "object-[50%_20%]" : "object-[50%_0%]"
+                    }`}
                   />
                 ) : (
                   // Placeholder jika gambar belum ada

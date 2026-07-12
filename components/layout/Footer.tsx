@@ -7,7 +7,7 @@ import {
   Leaf,
   Heart,
 } from "lucide-react";
-import { FaInstagram, FaFacebookF, FaYoutube, FaWhatsapp } from "react-icons/fa6";
+import { FaInstagram, FaTiktok, FaYoutube, FaWhatsapp } from "react-icons/fa6";
 import {
   SITE_NAME,
   SITE_ADDRESS,
@@ -68,14 +68,14 @@ export default function Footer() {
                 <FaInstagram className="w-4 h-4" aria-hidden="true" />
               </a>
               <a
-                id="footer-facebook"
-                href={SOCIAL_LINKS.facebook}
+                id="footer-tiktok"
+                href={SOCIAL_LINKS.tiktok}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-9 h-9 rounded-lg bg-neutral-900 hover:bg-neutral-800 text-neutral-400 hover:text-white transition-all duration-200 border border-neutral-800"
-                aria-label="Facebook Citra Anak Sholeh"
+                aria-label="TikTok Citra Anak Sholeh"
               >
-                <FaFacebookF className="w-4 h-4" aria-hidden="true" />
+                <FaTiktok className="w-4 h-4" aria-hidden="true" />
               </a>
               <a
                 id="footer-youtube"
