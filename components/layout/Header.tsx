@@ -70,10 +70,16 @@ export default function Header() {
               />
             </div>
             <div className="flex flex-col leading-none">
-              <span className="font-display font-bold text-primary-900 text-sm md:text-base tracking-wide">
+              <span className={cn(
+                "font-display font-bold text-sm md:text-base tracking-wide transition-colors duration-200",
+                isScrolled ? "text-primary-900" : "text-white"
+              )}>
                 CITRA ANAK
               </span>
-              <span className="font-display font-bold text-primary-600 text-sm md:text-base tracking-wide">
+              <span className={cn(
+                "font-display font-bold text-sm md:text-base tracking-wide transition-colors duration-200",
+                isScrolled ? "text-primary-600" : "text-gold-400"
+              )}>
                 SHOLEH
               </span>
             </div>
@@ -94,8 +100,8 @@ export default function Header() {
                   className={cn(
                     "relative px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200",
                     isActive
-                      ? "text-primary-700 bg-primary-50"
-                      : "text-neutral-600 hover:text-primary-700 hover:bg-primary-50"
+                      ? (isScrolled ? "text-primary-700 bg-primary-50" : "text-white bg-white/20")
+                      : (isScrolled ? "text-neutral-600 hover:text-primary-700 hover:bg-primary-50" : "text-white/80 hover:text-white hover:bg-white/10")
                   )}
                   aria-current={isActive ? "page" : undefined}
                 >
@@ -103,7 +109,10 @@ export default function Header() {
                   {isActive && (
                     <motion.span
                       layoutId="nav-indicator"
-                      className="absolute bottom-0 left-4 right-4 h-0.5 bg-primary-600 rounded-full"
+                      className={cn(
+                        "absolute bottom-0 left-4 right-4 h-0.5 rounded-full",
+                        isScrolled ? "bg-primary-600" : "bg-white"
+                      )}
                       transition={{ type: "spring", bounce: 0.25, duration: 0.4 }}
                     />
                   )}
@@ -117,7 +126,12 @@ export default function Header() {
             <Link
               id="header-cta-btn"
               href="/contact"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary-700 text-white text-sm font-semibold rounded-xl hover:bg-primary-600 active:bg-primary-800 transition-all duration-200 shadow-brand-sm hover:shadow-brand-md"
+              className={cn(
+                "inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-xl transition-all duration-200 shadow-brand-sm hover:shadow-brand-md",
+                isScrolled
+                  ? "bg-primary-700 text-white hover:bg-primary-600 active:bg-primary-800"
+                  : "bg-gold-500 text-primary-900 hover:bg-gold-400 active:bg-gold-600"
+              )}
             >
               Hubungi Kami
             </Link>
@@ -127,7 +141,12 @@ export default function Header() {
           <button
             id="mobile-menu-toggle"
             onClick={() => setIsMenuOpen((prev) => !prev)}
-            className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg text-neutral-700 hover:bg-primary-50 hover:text-primary-700 transition-colors duration-200"
+            className={cn(
+              "md:hidden flex items-center justify-center w-10 h-10 rounded-lg transition-colors duration-200",
+              isScrolled
+                ? "text-neutral-700 hover:bg-primary-50 hover:text-primary-700"
+                : "text-white hover:bg-white/10"
+            )}
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
             aria-label={isMenuOpen ? "Tutup menu" : "Buka menu"}

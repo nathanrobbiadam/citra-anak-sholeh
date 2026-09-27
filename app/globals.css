@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@config "../tailwind.config.ts";
 
 /* =============================================
    DESIGN TOKENS — via CSS custom properties
@@ -60,11 +61,12 @@ body {
 /* =============================================
    TYPOGRAPHY
    ============================================= */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-playfair), Georgia, serif;
-  line-height: 1.25;
-  font-weight: 700;
-  color: #0d3321;
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-playfair), Georgia, serif;
+    line-height: 1.25;
+    font-weight: 700;
+  }
 }
 
 /* =============================================

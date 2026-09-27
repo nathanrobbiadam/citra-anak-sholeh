@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useRef } from "react";
-import Image from "next/image";
-import { motion, useInView } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 
 // [TODO: Ganti dengan data pengurus asli dari client]
 const TEAM_MEMBERS = [
@@ -10,7 +9,7 @@ const TEAM_MEMBERS = [
     id: 1,
     name: "Ustadz HM. Syifa'uddin, S.Ag",
     role: "Ketua Yayasan",
-    image: "/images/PAK.png",
+    image: "/images/PAK.png", 
     description: "Ketua Yayasan Citra Anak Sholeh Surabaya.",
   },
   {
@@ -19,12 +18,11 @@ const TEAM_MEMBERS = [
     role: "Kepala Unit",
     image: "/images/BU.png",
     description: "Kepala Unit TK TPQ Diniyah Tarbawi dan Pesantren Tahfidz Anak Sholeh.",
-  },
+  }
 ];
 
 export default function TeamSection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+
 
   return (
     <section className="py-16 md:py-24 bg-neutral-50" aria-labelledby="team-heading">
@@ -47,26 +45,27 @@ export default function TeamSection() {
         </div>
 
         {/* Team Grid */}
-        <div ref={ref} className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 max-w-4xl mx-auto gap-8">
           {TEAM_MEMBERS.map((member, idx) => (
             <motion.div
               key={member.id}
               initial={{ opacity: 0, y: 32 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: idx * 0.15, duration: 0.5 }}
               className="bg-white rounded-3xl p-6 shadow-brand-sm border border-neutral-100 text-center card-lift group"
             >
               {/* Image Placeholder */}
               <div className="relative w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden bg-primary-100 border-4 border-white shadow-sm">
                 {member.image ? (
-                  <Image
+                  // Jika ada gambar asli, gunakan img (bisa diganti next/image nantinya)
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
                     src={member.image}
                     alt={`Foto ${member.name}`}
-                    fill
-                    sizes="128px"
-                    className={`object-cover ${
-                      member.id === 2 ? "object-[50%_20%]" : "object-[50%_0%]"
-                    }`}
+                    className={`object-cover w-full h-full ${
+                      member.id === 2 ? "object-[center_0%]" : "object-top"
+                     }`}
                   />
                 ) : (
                   // Placeholder jika gambar belum ada
